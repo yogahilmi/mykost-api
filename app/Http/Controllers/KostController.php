@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Availability;
 use Validator;
 use App\Models\Kost;
 use Illuminate\Http\Request;
@@ -131,7 +132,14 @@ class KostController extends Controller
         } else {
             $kost = Kost::find($id);
             if ($kost) {
+                /**
+                 * Deleted availability with kost_id if available.
+                 */
                 $kost->destroy($id);
+                $availability = Availability::where('kost_id', $id);
+                if ($availability) {
+                    $availability->delete();
+                }
                 return response()->json([
                     'status' => TRUE,
                     'message' => 'Delete success'
