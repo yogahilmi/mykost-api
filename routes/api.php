@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\AvailabilityController;
-use App\Http\Controllers\KostController;
+use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\AvailabilityController;
+use App\Http\Controllers\API\KostController;
 use Illuminate\Support\Facades\Route;
 
 /*
