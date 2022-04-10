@@ -63,11 +63,29 @@ To run scheduling task you can use **Crontab**:
     php artisan migrate
 ```
 
-5. Run the project
+5. Run the project, to open port 8000
 
 ```
     php artisan serve
 ```
+
+Because the web server runs only one single-threaded process, so PHP applications will stall if a request is blocked.
+
+6. Run the project again with other terminal, to open port 8001 for API Call
+
+```
+    php artisan serve
+```
+
+## Owner Dashboard
+
+Owner Dashboard using for management kost with CRUD. Owner can view his kost, create, update and delete. To open Dashboard, please access below :
+
+```
+    http://localhost:8000
+```
+
+You can login as owner or create new user.
 
 # API Documentation
 
